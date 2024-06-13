@@ -10,7 +10,6 @@
 		532F16582C1B585800EB4F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16572C1B585800EB4F8F /* AppDelegate.swift */; };
 		532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16592C1B585800EB4F8F /* SceneDelegate.swift */; };
 		532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F165B2C1B585800EB4F8F /* ViewController.swift */; };
-		532F165F2C1B585800EB4F8F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 532F165E2C1B585800EB4F8F /* Base */; };
 		532F16612C1B585A00EB4F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532F16602C1B585A00EB4F8F /* Assets.xcassets */; };
 		532F16642C1B585A00EB4F8F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 532F16632C1B585A00EB4F8F /* Base */; };
 		532F166C2C1B595300EB4F8F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 532F166B2C1B595300EB4F8F /* .gitignore */; };
@@ -21,7 +20,6 @@
 		532F16572C1B585800EB4F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532F16592C1B585800EB4F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		532F165B2C1B585800EB4F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		532F165E2C1B585800EB4F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		532F16602C1B585A00EB4F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532F16632C1B585A00EB4F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532F16652C1B585A00EB4F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				532F16572C1B585800EB4F8F /* AppDelegate.swift */,
 				532F16592C1B585800EB4F8F /* SceneDelegate.swift */,
 				532F165B2C1B585800EB4F8F /* ViewController.swift */,
-				532F165D2C1B585800EB4F8F /* Main.storyboard */,
 				532F16602C1B585A00EB4F8F /* Assets.xcassets */,
 				532F16622C1B585A00EB4F8F /* LaunchScreen.storyboard */,
 				532F16652C1B585A00EB4F8F /* Info.plist */,
@@ -131,7 +128,6 @@
 				532F166C2C1B595300EB4F8F /* .gitignore in Resources */,
 				532F16612C1B585A00EB4F8F /* Assets.xcassets in Resources */,
 				532F16642C1B585A00EB4F8F /* Base in Resources */,
-				532F165F2C1B585800EB4F8F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		532F165D2C1B585800EB4F8F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				532F165E2C1B585800EB4F8F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		532F16622C1B585A00EB4F8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,12 +287,10 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lets_Shopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "김수경";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,12 +319,10 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lets_Shopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "김수경";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
