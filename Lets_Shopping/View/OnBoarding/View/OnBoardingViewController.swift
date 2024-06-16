@@ -41,6 +41,7 @@ final class OnBoardingStartViewController: UIViewController {
         
         configureHierarchy()
         configureLayout()
+        configureAction()
     }
     
     
@@ -71,6 +72,16 @@ final class OnBoardingStartViewController: UIViewController {
         }
     }
     
+    private func configureAction() {
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+    }
+    
+
+    @objc
+    private func startButtonTapped() {
+        let vc = ProfileSettingViewController()
+        navigationController?.pushViewController(vc, animated: false)
+    }
     
 }
 

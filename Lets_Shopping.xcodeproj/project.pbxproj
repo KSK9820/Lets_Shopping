@@ -13,6 +13,30 @@
 		532F16612C1B585A00EB4F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532F16602C1B585A00EB4F8F /* Assets.xcassets */; };
 		532F16642C1B585A00EB4F8F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 532F16632C1B585A00EB4F8F /* Base */; };
 		532F166C2C1B595300EB4F8F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 532F166B2C1B595300EB4F8F /* .gitignore */; };
+		5346DA172C1C1692008DEFBD /* UserInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */; };
+		5346DA192C1C16EC008DEFBD /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA182C1C16EC008DEFBD /* ProfileSettingViewController.swift */; };
+		5346DA1B2C1C1836008DEFBD /* ProfileSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA1A2C1C1836008DEFBD /* ProfileSettingViewModel.swift */; };
+		5346DA1D2C1C1B22008DEFBD /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA1C2C1C1B22008DEFBD /* ProfileImageView.swift */; };
+		5346DA1F2C1C1BF4008DEFBD /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA1E2C1C1BF4008DEFBD /* ProfileImage.swift */; };
+		5346DA222C1C35ED008DEFBD /* NickNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA212C1C35ED008DEFBD /* NickNameTextField.swift */; };
+		5346DA252C1C40B5008DEFBD /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA242C1C40B5008DEFBD /* CALayer+Extension.swift */; };
+		5346DA272C1CCBC5008DEFBD /* NickNameMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA262C1CCBC5008DEFBD /* NickNameMessage.swift */; };
+		5346DA2A2C1D7185008DEFBD /* NickNameTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA292C1D7185008DEFBD /* NickNameTextFieldDelegate.swift */; };
+		5346DA2C2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA2B2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift */; };
+		5346DA2F2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA2E2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift */; };
+		5346DA312C1DBC7B008DEFBD /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA302C1DBC7B008DEFBD /* ReuseIdentifiable.swift */; };
+		5346DA352C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */; };
+		5346DA372C1E007C008DEFBD /* ProfileImageSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA362C1E007C008DEFBD /* ProfileImageSettingViewModel.swift */; };
+		5346DA392C1E1ABB008DEFBD /* ProfileSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA382C1E1ABB008DEFBD /* ProfileSettingDelegate.swift */; };
+		5346DA3B2C1E2116008DEFBD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */; };
+		5346DA3E2C1E2695008DEFBD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA3D2C1E2695008DEFBD /* MainViewController.swift */; };
+		5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA432C1EBA65008DEFBD /* TabBarController.swift */; };
+		53A4227E2C1B692F00556400 /* ContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4227D2C1B692F00556400 /* ContentSize.swift */; };
+		53E46DC92C1B60760026DA77 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DC82C1B60760026DA77 /* Binding.swift */; };
+		53E46DD02C1B61F10026DA77 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DCF2C1B61F00026DA77 /* OnBoardingViewController.swift */; };
+		53E46DD32C1B62A00026DA77 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DD22C1B62A00026DA77 /* OrangeButton.swift */; };
+		53E46DD52C1B63760026DA77 /* SystemFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DD42C1B63760026DA77 /* SystemFont.swift */; };
+		53E46DD82C1B65390026DA77 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53E46DD72C1B65390026DA77 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +48,29 @@
 		532F16632C1B585A00EB4F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532F16652C1B585A00EB4F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532F166B2C1B595300EB4F8F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationDTO.swift; sourceTree = "<group>"; };
+		5346DA182C1C16EC008DEFBD /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
+		5346DA1A2C1C1836008DEFBD /* ProfileSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewModel.swift; sourceTree = "<group>"; };
+		5346DA1C2C1C1B22008DEFBD /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		5346DA1E2C1C1BF4008DEFBD /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		5346DA212C1C35ED008DEFBD /* NickNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameTextField.swift; sourceTree = "<group>"; };
+		5346DA242C1C40B5008DEFBD /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		5346DA262C1CCBC5008DEFBD /* NickNameMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameMessage.swift; sourceTree = "<group>"; };
+		5346DA292C1D7185008DEFBD /* NickNameTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameTextFieldDelegate.swift; sourceTree = "<group>"; };
+		5346DA2B2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSettingViewController.swift; sourceTree = "<group>"; };
+		5346DA2E2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		5346DA302C1DBC7B008DEFBD /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackLeftBarButtonItem.swift; sourceTree = "<group>"; };
+		5346DA362C1E007C008DEFBD /* ProfileImageSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSettingViewModel.swift; sourceTree = "<group>"; };
+		5346DA382C1E1ABB008DEFBD /* ProfileSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingDelegate.swift; sourceTree = "<group>"; };
+		5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		5346DA3D2C1E2695008DEFBD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5346DA432C1EBA65008DEFBD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		53A4227D2C1B692F00556400 /* ContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSize.swift; sourceTree = "<group>"; };
+		53E46DC82C1B60760026DA77 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		53E46DCF2C1B61F00026DA77 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		53E46DD22C1B62A00026DA77 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
+		53E46DD42C1B63760026DA77 /* SystemFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E46DD82C1B65390026DA77 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +105,12 @@
 		532F16562C1B585800EB4F8F /* Lets_Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				5346DA232C1C40AD008DEFBD /* Extension */,
+				5346DA152C1C168A008DEFBD /* DTO */,
+				5346DA202C1C1C0B008DEFBD /* Enum */,
+				53E46DD92C1B68480026DA77 /* CustomView */,
+				53E46DCD2C1B61D40026DA77 /* View */,
+				53E46DC72C1B60600026DA77 /* Utility */,
 				532F16572C1B585800EB4F8F /* AppDelegate.swift */,
 				532F16592C1B585800EB4F8F /* SceneDelegate.swift */,
 				532F165B2C1B585800EB4F8F /* ViewController.swift */,
@@ -65,6 +119,151 @@
 				532F16652C1B585A00EB4F8F /* Info.plist */,
 			);
 			path = Lets_Shopping;
+			sourceTree = "<group>";
+		};
+		5346DA152C1C168A008DEFBD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		5346DA202C1C1C0B008DEFBD /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA1E2C1C1BF4008DEFBD /* ProfileImage.swift */,
+				53A4227D2C1B692F00556400 /* ContentSize.swift */,
+				5346DA262C1CCBC5008DEFBD /* NickNameMessage.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		5346DA232C1C40AD008DEFBD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA242C1C40B5008DEFBD /* CALayer+Extension.swift */,
+				5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5346DA282C1D7176008DEFBD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA292C1D7185008DEFBD /* NickNameTextFieldDelegate.swift */,
+				5346DA382C1E1ABB008DEFBD /* ProfileSettingDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5346DA2D2C1DBAA8008DEFBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA2E2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5346DA3C2C1E2674008DEFBD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA412C1E2780008DEFBD /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5346DA3F2C1E2753008DEFBD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DCC2C1B61B80026DA77 /* View */,
+				53E46DCB2C1B61B40026DA77 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5346DA402C1E276A008DEFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DCF2C1B61F00026DA77 /* OnBoardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5346DA412C1E2780008DEFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA3D2C1E2695008DEFBD /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5346DA422C1EBA58008DEFBD /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA432C1EBA65008DEFBD /* TabBarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		53E46DC72C1B60600026DA77 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DC82C1B60760026DA77 /* Binding.swift */,
+				5346DA302C1DBC7B008DEFBD /* ReuseIdentifiable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		53E46DCA2C1B61AC0026DA77 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA402C1E276A008DEFBD /* View */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		53E46DCB2C1B61B40026DA77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA1A2C1C1836008DEFBD /* ProfileSettingViewModel.swift */,
+				5346DA362C1E007C008DEFBD /* ProfileImageSettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		53E46DCC2C1B61B80026DA77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA282C1D7176008DEFBD /* Protocol */,
+				5346DA2D2C1DBAA8008DEFBD /* Cell */,
+				5346DA182C1C16EC008DEFBD /* ProfileSettingViewController.swift */,
+				5346DA2B2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53E46DCD2C1B61D40026DA77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5346DA422C1EBA58008DEFBD /* Tabbar */,
+				5346DA3F2C1E2753008DEFBD /* Profile */,
+				5346DA3C2C1E2674008DEFBD /* Main */,
+				53E46DCA2C1B61AC0026DA77 /* OnBoarding */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53E46DD92C1B68480026DA77 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DD22C1B62A00026DA77 /* OrangeButton.swift */,
+				53E46DD42C1B63760026DA77 /* SystemFont.swift */,
+				5346DA1C2C1C1B22008DEFBD /* ProfileImageView.swift */,
+				5346DA212C1C35ED008DEFBD /* NickNameTextField.swift */,
+				5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +282,9 @@
 			dependencies = (
 			);
 			name = Lets_Shopping;
+			packageProductDependencies = (
+				53E46DD72C1B65390026DA77 /* SnapKit */,
+			);
 			productName = Lets_Shopping;
 			productReference = 532F16542C1B585800EB4F8F /* Lets_Shopping.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +313,9 @@
 				Base,
 			);
 			mainGroup = 532F164B2C1B585800EB4F8F;
+			packageReferences = (
+				53E46DD62C1B65390026DA77 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 532F16552C1B585800EB4F8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +343,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5346DA1D2C1C1B22008DEFBD /* ProfileImageView.swift in Sources */,
+				5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */,
+				5346DA222C1C35ED008DEFBD /* NickNameTextField.swift in Sources */,
+				5346DA2F2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift in Sources */,
 				532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */,
+				5346DA352C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift in Sources */,
+				53E46DD32C1B62A00026DA77 /* OrangeButton.swift in Sources */,
+				5346DA1F2C1C1BF4008DEFBD /* ProfileImage.swift in Sources */,
+				5346DA312C1DBC7B008DEFBD /* ReuseIdentifiable.swift in Sources */,
+				5346DA172C1C1692008DEFBD /* UserInformationDTO.swift in Sources */,
+				53E46DD52C1B63760026DA77 /* SystemFont.swift in Sources */,
+				5346DA2C2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift in Sources */,
 				532F16582C1B585800EB4F8F /* AppDelegate.swift in Sources */,
+				5346DA252C1C40B5008DEFBD /* CALayer+Extension.swift in Sources */,
 				532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */,
+				5346DA3E2C1E2695008DEFBD /* MainViewController.swift in Sources */,
+				5346DA2A2C1D7185008DEFBD /* NickNameTextFieldDelegate.swift in Sources */,
+				5346DA272C1CCBC5008DEFBD /* NickNameMessage.swift in Sources */,
+				5346DA1B2C1C1836008DEFBD /* ProfileSettingViewModel.swift in Sources */,
+				53A4227E2C1B692F00556400 /* ContentSize.swift in Sources */,
+				5346DA392C1E1ABB008DEFBD /* ProfileSettingDelegate.swift in Sources */,
+				5346DA192C1C16EC008DEFBD /* ProfileSettingViewController.swift in Sources */,
+				5346DA3B2C1E2116008DEFBD /* UserDefaults+Extension.swift in Sources */,
+				5346DA372C1E007C008DEFBD /* ProfileImageSettingViewModel.swift in Sources */,
+				53E46DC92C1B60760026DA77 /* Binding.swift in Sources */,
+				53E46DD02C1B61F10026DA77 /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53E46DD62C1B65390026DA77 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53E46DD72C1B65390026DA77 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53E46DD62C1B65390026DA77 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 532F164C2C1B585800EB4F8F /* Project object */;
 }
