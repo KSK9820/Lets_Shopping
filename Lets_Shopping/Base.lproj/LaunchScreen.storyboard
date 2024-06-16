@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Shopping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaz-w1-zn3">
-                                <rect key="frame" x="76.333333333333329" y="156" width="240.66666666666669" height="38.333333333333343"/>
+                                <rect key="frame" x="76.333333333333329" y="176" width="240.66666666666669" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
                                 <color key="textColor" name="sOrange"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                             <constraint firstItem="oaz-w1-zn3" firstAttribute="centerX" secondItem="7Yd-WC-ogd" secondAttribute="centerX" id="Jyz-Bz-bdF"/>
                             <constraint firstItem="Kag-Mn-flw" firstAttribute="centerX" secondItem="7Yd-WC-ogd" secondAttribute="centerX" id="KLx-pH-jBg"/>
                             <constraint firstItem="Kag-Mn-flw" firstAttribute="top" secondItem="BU9-q5-Go6" secondAttribute="bottom" constant="50" id="Zen-gZ-hAV"/>
-                            <constraint firstItem="BU9-q5-Go6" firstAttribute="top" secondItem="oaz-w1-zn3" secondAttribute="bottom" constant="100" id="eoy-zF-krd"/>
+                            <constraint firstItem="BU9-q5-Go6" firstAttribute="top" secondItem="oaz-w1-zn3" secondAttribute="bottom" constant="80" id="eoy-zF-krd"/>
                             <constraint firstItem="BU9-q5-Go6" firstAttribute="centerY" secondItem="7Yd-WC-ogd" secondAttribute="centerY" id="w6e-nH-8GA"/>
                             <constraint firstItem="BU9-q5-Go6" firstAttribute="centerX" secondItem="7Yd-WC-ogd" secondAttribute="centerX" id="xXS-FU-N6D"/>
                         </constraints>
