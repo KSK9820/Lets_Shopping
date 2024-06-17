@@ -62,6 +62,10 @@ final class ProfileImageView: UIView {
         profileImageView.image = UIImage(named: profile.imageName)
     }
     
+    func hideCameraButton() {
+        cameraImageButton.isHidden = true
+    }
+    
     
     // MARK: - ConfigureUI
 
