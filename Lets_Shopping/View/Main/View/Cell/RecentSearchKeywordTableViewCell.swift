@@ -59,6 +59,7 @@ final class RecentSearchKeywordTableViewCell: UITableViewCell {
         
         configureHierarchy()
         configureLayout()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -99,6 +100,10 @@ final class RecentSearchKeywordTableViewCell: UITableViewCell {
             make.directionalVerticalEdges.equalToSuperview()
             make.directionalHorizontalEdges.equalToSuperview().inset(ContentSize.searchTableViewRow.spacing)
         }
+    }
+    
+    private func configureUI() {
+        selectionStyle = .none
     }
     
     
