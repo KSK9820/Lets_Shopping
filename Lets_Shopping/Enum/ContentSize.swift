@@ -15,12 +15,13 @@ enum ContentSize {
     case nicknameTextField
     case profileImageCollectionView
     case searchTableViewRow
+    case resultCollectionView
     
     var spacing: CGFloat {
         switch self {
         case .orangeButton, .nicknameTextField:
             30
-        case .profileImageCollectionView:
+        case .profileImageCollectionView, .resultCollectionView:
             20
         case .searchTableViewRow:
             16
