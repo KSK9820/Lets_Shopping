@@ -102,6 +102,13 @@ final class MainViewController: UIViewController {
         keywordTableView.separatorStyle = .none
     }
     
+    
+    private func pushSearchResultViewController(_ keyword: String) {
+        let vm = SearchResultViewModel(title: keyword)
+        let vc = SearchResultViewController(vm)
+        
+        navigationController?.pushViewController(vc, animated: false)
+    }
 }
 
 
@@ -110,9 +117,8 @@ extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         
-        UserDefaults.standard.recentSearchKeyword.keyword.updateValue(Date(), forKey: keyword)
-        viewModel.addRecentSearchKeyword()
-        navigationController?.pushViewController(SearchResultViewController(), animated: false)
+        viewModel.addRecentSearchKeyword(keyword)
+        pushSearchResultViewController(keyword)
     }
     
 }
@@ -140,9 +146,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SearchResultViewController()
-        
-        navigationController?.pushViewController(vc, animated: false)
+        pushSearchResultViewController(viewModel.sortedRecentKeyword[indexPath.row].keyword)
     }
     
 }
