@@ -11,6 +11,7 @@ extension UserDefaults {
     
     private enum UserDefaultsKeys: String {
         case userInformation
+        case recentSearchKeyword
     }
     
     var userInformation: UserInformationDTO? {
@@ -26,4 +27,20 @@ extension UserDefaults {
         }
     }
     
+    var recentSearchKeyword: RecentSearchKeywordDTO {
+        get {
+            guard let userData = UserDefaults.standard.data(forKey: UserDefaultsKeys.recentSearchKeyword.rawValue) else { return RecentSearchKeywordDTO(keyword: [:]) }
+            
+            guard let decodedData = try? JSONDecoder().decode(RecentSearchKeywordDTO.self, from: userData) else {
+                return RecentSearchKeywordDTO(keyword: [:])
+            }
+            
+            return decodedData
+        }
+        
+        set {
+            let encodedData = try? JSONEncoder().encode(newValue)
+            UserDefaults.standard.setValue(encodedData, forKey: UserDefaultsKeys.recentSearchKeyword.rawValue)
+        }
+    }
 }
