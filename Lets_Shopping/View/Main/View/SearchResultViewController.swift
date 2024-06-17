@@ -11,6 +11,7 @@ import SnapKit
 final class SearchResultViewController: UIViewController {
     
     private let viewModel: SearchResultViewModel
+    private var selectedIndexPath: IndexPath?
     
     private let headerView = SerchResultHeaderView()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
@@ -47,14 +48,26 @@ final class SearchResultViewController: UIViewController {
         viewModel.filterButtonStatus.bind { [weak self] buttonStatus in
             self?.headerView.selectButton(status: buttonStatus)
             
-            if let searchResult = self?.viewModel.searchResult.value {
-                self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            DispatchQueue.main.async {
+                if let _ = self?.viewModel.searchResult.value {
+                    self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                }
             }
         }
         
         viewModel.searchResult.bind { [weak self] result in
-            self?.headerView.setTitle(self?.viewModel.totalSearchResult)
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.headerView.setTitle(self?.viewModel.totalSearchResult)
+                self?.collectionView.reloadData()
+            }
+        }
+        
+        viewModel.likeList.bind { [weak self] like in
+            DispatchQueue.main.async {
+                if let indexPath = self?.selectedIndexPath {
+                    self?.collectionView.reloadItems(at: [indexPath])
+                }
+            }
         }
     }
     
@@ -134,7 +147,19 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SearchResultDetailViewController()
+        guard let searchResult = viewModel.searchResult.value else { return }
+        
+        let item = searchResult.items[indexPath.row]
+        
+        let data = SearchResultDetailDataModel(title: item.title,
+                                               like: viewModel.likeList.value.item[item.productId],
+                                               id: item.productId,
+                                               link: item.link)
+        let vm = SearchResultDetailViewModel(data)
+        let vc = SearchResultDetailViewController(vm)
+        vc.delegate = self
+        
+        selectedIndexPath = indexPath
         
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -172,3 +197,8 @@ extension SearchResultViewController: SearchResultDelegate {
 
 
 
+extension SearchResultViewController: LikeDelegate {
+    func updateLike(_ id: String) {
+        let _ = viewModel.updateLikeList(id)
+    }
+}
