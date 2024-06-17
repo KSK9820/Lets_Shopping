@@ -89,6 +89,7 @@ final class SearchResultViewController: UIViewController {
         headerView.delegate = self
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.prefetchDataSource = self
         collectionView.register(SearchResultCollectionViewCell.self, forCellWithReuseIdentifier: SearchResultCollectionViewCell.reuseIdentifier)
         
@@ -111,7 +112,7 @@ final class SearchResultViewController: UIViewController {
 }
 
 
-extension SearchResultViewController: UICollectionViewDataSource {
+extension SearchResultViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.startIndex - 1
@@ -130,6 +131,12 @@ extension SearchResultViewController: UICollectionViewDataSource {
         cell.setLikeButton(viewModel.validateLikeList(indexPath))
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = SearchResultDetailViewController()
+        
+        navigationController?.pushViewController(vc, animated: false)
     }
     
 }
