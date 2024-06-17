@@ -38,7 +38,8 @@ final class MainViewModel {
         sortedRecentKeyword[index].keyword
     }
     
-    func addRecentSearchKeyword() {
+    func addRecentSearchKeyword(_ keyword: String) {
+        UserDefaults.standard.recentSearchKeyword.keyword.updateValue(Date(), forKey: keyword)
         recentSearchKeyword.value = UserDefaults.standard.recentSearchKeyword
     }
     
