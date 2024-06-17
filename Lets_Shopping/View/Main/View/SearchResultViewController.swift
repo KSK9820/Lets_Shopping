@@ -81,6 +81,10 @@ final class SearchResultViewController: UIViewController {
     
     private func configureUI() {
         navigationItem.title = viewModel.title
+        navigationItem.leftBarButtonItem = BlackLeftBarButtonItem(
+                    action: #selector(navigationBackButtonItemTapped),
+                    target: self)
+        
         
         headerView.delegate = self
         
@@ -101,6 +105,9 @@ final class SearchResultViewController: UIViewController {
         return layout
     }
     
+    @objc private func navigationBackButtonItemTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 
@@ -131,7 +138,6 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
             if indexPath.row == viewModel.startIndex - 4 &&
                 viewModel.startIndex < searchResult.total {
                 viewModel.getSearchData()
-                print(viewModel.startIndex)
             }
         }
     }
