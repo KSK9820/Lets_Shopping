@@ -125,6 +125,9 @@ extension SearchResultViewController: UICollectionViewDataSource {
         if let item = viewModel.searchResult.value {
             cell.setContents(item.items[indexPath.row])
         }
+        cell.delegate = self
+        cell.setIndexPath(indexPath)
+        cell.setLikeButton(viewModel.validateLikeList(indexPath))
         
         return cell
     }
@@ -150,7 +153,15 @@ extension SearchResultViewController: SearchResultDelegate {
     func filterButtonTapped(_ index: Int) {
         viewModel.changeFilterButtonStatus(index)
     }
+    
+    func likeButtonTapped(_ index: Int) -> Bool {
+        if let searchResult = viewModel.searchResult.value {
+            return viewModel.updateLikeList(searchResult.items[index].productId)
+        }
+        return true
+    }
         
 }
+
 
 

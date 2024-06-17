@@ -9,4 +9,5 @@ import Foundation
 
 protocol SearchResultDelegate: AnyObject {
     func filterButtonTapped(_ index: Int)
+    func likeButtonTapped(_ index: Int) -> Bool
 }

@@ -40,6 +40,7 @@
 		5381DD502C206CDC006F733B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381DD4F2C206CDC006F733B /* NetworkManager.swift */; };
 		5381DD532C207411006F733B /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381DD522C207411006F733B /* Sort.swift */; };
 		5381DD552C20768D006F733B /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381DD542C20768D006F733B /* SearchResultDTO.swift */; };
+		5381DD572C209CD6006F733B /* LikeItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381DD562C209CD6006F733B /* LikeItemDTO.swift */; };
 		53A031002C1F341A00F85A6F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A030FF2C1F341A00F85A6F /* MainViewModel.swift */; };
 		53A031022C1F5D5500F85A6F /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A031012C1F5D5500F85A6F /* SearchResultViewController.swift */; };
 		53A031042C1F603700F85A6F /* RecentSearchKeywordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A031032C1F603700F85A6F /* RecentSearchKeywordDTO.swift */; };
@@ -93,6 +94,7 @@
 		5381DD4F2C206CDC006F733B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5381DD522C207411006F733B /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		5381DD542C20768D006F733B /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
+		5381DD562C209CD6006F733B /* LikeItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeItemDTO.swift; sourceTree = "<group>"; };
 		53A030FF2C1F341A00F85A6F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		53A031012C1F5D5500F85A6F /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		53A031032C1F603700F85A6F /* RecentSearchKeywordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchKeywordDTO.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */,
 				53A031032C1F603700F85A6F /* RecentSearchKeywordDTO.swift */,
 				5381DD542C20768D006F733B /* SearchResultDTO.swift */,
+				5381DD562C209CD6006F733B /* LikeItemDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				5346DA1D2C1C1B22008DEFBD /* ProfileImageView.swift in Sources */,
 				5381DD3F2C205617006F733B /* SearchResultCollectionViewCell.swift in Sources */,
 				5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */,
+				5381DD572C209CD6006F733B /* LikeItemDTO.swift in Sources */,
 				53A031022C1F5D5500F85A6F /* SearchResultViewController.swift in Sources */,
 				5346DA222C1C35ED008DEFBD /* NickNameTextField.swift in Sources */,
 				5346DA2F2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift in Sources */,

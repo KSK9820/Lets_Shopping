@@ -11,6 +11,9 @@ import Kingfisher
 
 final class SearchResultCollectionViewCell: UICollectionViewCell {
     
+    weak var delegate: SearchResultDelegate?
+    var indexPath: IndexPath?
+    
     private let itemImageView = UIImageView()
     private let likeButton: UIButton = {
         let view = UIButton()
@@ -74,8 +77,21 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         mallNameLabel.text = data.mallName
         titleLabel.text = data.title
         priceLabel.text = data.lprice + "원"
+        
+        likeButton.addTarget(self, action: #selector(LikeButtonTapped), for: .touchUpInside)
     }
     
+    func setIndexPath(_ index: IndexPath) {
+        indexPath = index
+    }
+    
+    func setLikeButton(_ like: Bool) {
+        if like {
+            selectedLikeButton()
+        } else {
+            unselectedLikeButton()
+        }
+    }
     
     // MARK: - Configure UI
     
@@ -112,6 +128,26 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         }
     }
     
-
+    private func selectedLikeButton() {
+        likeButton.setImage(UIImage(systemName: "bag.fill"), for: .normal)
+        likeButton.tintColor = .sBlack
+        likeButton.backgroundColor = .sLightGray.withAlphaComponent(0.5)
+    }
     
+    private func unselectedLikeButton() {
+        likeButton.setImage(UIImage(systemName: "bag"), for: .normal)
+        likeButton.tintColor = .sWhite
+        likeButton.backgroundColor = .sMediumGray.withAlphaComponent(0.5)
+    }
+    
+    @objc
+    private func LikeButtonTapped() {
+        guard let indexPath else { return }
+        if delegate?.likeButtonTapped(indexPath.row) == true {
+            selectedLikeButton()
+        } else {
+            unselectedLikeButton()
+        }
+    }
+   
 }

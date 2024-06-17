@@ -13,6 +13,7 @@ final class SearchResultViewModel {
     
     private(set) var filterButtonStatus = Binding<[Bool]>([true, false, false, false])
     private(set) var searchResult = Binding<SearchResultDTO?>(nil)
+    private(set) var likeList = Binding<LikeItemDTO>(UserDefaults.standard.likeItem)
     
     private(set) var title: String
     private(set) var searchSort: Sort = .sim
@@ -47,15 +48,38 @@ final class SearchResultViewModel {
                 if self?.startIndex == 1 {
                     self?.searchResult.value = data
                     self?.startIndex = data.start + data.display
-                    print(self?.startIndex)
                 } else {
                     self?.startIndex = data.start + data.display
                     self?.searchResult.value?.items.append(contentsOf: data.items)
-                    print(self?.startIndex, "daldskfjlsk")
                 }
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func updateLikeList(_ id: String) -> Bool {
+        if likeList.value.item[id] == true {
+            UserDefaults.standard.likeItem.item.removeValue(forKey: id)
+            likeList.value = UserDefaults.standard.likeItem
+            
+            return false
+        } else {
+            UserDefaults.standard.likeItem.item.updateValue(true, forKey: id)
+            likeList.value = UserDefaults.standard.likeItem
+            
+            return true
+        }
+    }
+    
+    func validateLikeList(_ index: IndexPath) -> Bool {
+        guard let searchResult = searchResult.value else { return false }
+        let id = searchResult.items[index.row].productId
+        
+        if likeList.value.item[id] == true {
+            return true
+        } else {
+            return false
         }
     }
     
