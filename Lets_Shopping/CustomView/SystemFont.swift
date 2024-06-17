@@ -10,6 +10,8 @@ import UIKit
 enum SystemFont {
     static let onboardingTitle = UIFont.systemFont(ofSize: 32, weight: .black)
     
+    static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
+    
     static let regular16 = UIFont.systemFont(ofSize: 16, weight: .regular)
     static let regular15 = UIFont.systemFont(ofSize: 15, weight: .regular)
     static let regular14 = UIFont.systemFont(ofSize: 14, weight: .regular)
