@@ -3,6 +3,7 @@
 
 APIKey.swift
 APIURL.swift
+Secrets.xcconfig
 
 .DS_Store
 
