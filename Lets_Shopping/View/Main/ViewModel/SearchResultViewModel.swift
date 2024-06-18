@@ -13,11 +13,11 @@ final class SearchResultViewModel {
     
     private(set) var filterButtonStatus = Binding<[Bool]>([true, false, false, false])
     private(set) var searchResult = Binding<SearchResultDTO?>(nil)
-    private(set) var likeList = Binding<LikeItemDTO>(UserDefaults.standard.likeItem)
     
     private(set) var title: String
     private(set) var searchSort: Sort = .sim
     private(set) var startIndex = 1
+    private(set) var selectedCellIndexPath: IndexPath?
     
     var totalSearchResult: String? {
         get {
@@ -58,16 +58,18 @@ final class SearchResultViewModel {
         }
     }
     
+    func setSelectedIndex(_ indexPath: IndexPath) {
+        selectedCellIndexPath = indexPath
+    }
+    
     func updateLikeList(_ id: String) -> Bool {
-        if likeList.value.item[id] == true {
+        if UserDefaults.standard.likeItem.item[id] == true {
             UserDefaults.standard.likeItem.item.removeValue(forKey: id)
-            likeList.value = UserDefaults.standard.likeItem
             
             return false
         } else {
             UserDefaults.standard.likeItem.item.updateValue(true, forKey: id)
-            likeList.value = UserDefaults.standard.likeItem
-            
+           
             return true
         }
     }
@@ -76,7 +78,7 @@ final class SearchResultViewModel {
         guard let searchResult = searchResult.value else { return false }
         let id = searchResult.items[index.row].productId
         
-        if likeList.value.item[id] == true {
+        if UserDefaults.standard.likeItem.item[id] == true {
             return true
         } else {
             return false

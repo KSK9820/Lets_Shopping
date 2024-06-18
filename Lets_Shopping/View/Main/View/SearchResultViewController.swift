@@ -11,10 +11,19 @@ import SnapKit
 final class SearchResultViewController: UIViewController {
     
     private let viewModel: SearchResultViewModel
-    private var selectedIndexPath: IndexPath?
     
     private let headerView = SerchResultHeaderView()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        if let indexPath = viewModel.selectedCellIndexPath {
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,14 +72,7 @@ final class SearchResultViewController: UIViewController {
                 self?.collectionView.reloadData()
             }
         }
-        
-        viewModel.likeList.bind { [weak self] like in
-            DispatchQueue.main.async {
-                if let indexPath = self?.selectedIndexPath {
-                    self?.collectionView.reloadItems(at: [indexPath])
-                }
-            }
-        }
+
     }
     
     
@@ -124,6 +126,7 @@ final class SearchResultViewController: UIViewController {
     @objc private func navigationBackButtonItemTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
 }
 
 
@@ -154,14 +157,13 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
         let item = searchResult.items[indexPath.row]
         
         let data = SearchResultDetailDataModel(title: item.title,
-                                               like: viewModel.likeList.value.item[item.productId],
+                                               like: UserDefaults.standard.likeItem.item[item.productId],
                                                id: item.productId,
                                                link: item.link)
         let vm = SearchResultDetailViewModel(data)
         let vc = SearchResultDetailViewController(vm)
-        vc.delegate = self
         
-        selectedIndexPath = indexPath
+        viewModel.setSelectedIndex(indexPath)
         
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -169,6 +171,7 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
 }
 
 extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
+    
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             guard let searchResult = viewModel.searchResult.value else { break }
@@ -178,6 +181,7 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
             }
         }
     }
+    
 }
 
 
@@ -195,12 +199,4 @@ extension SearchResultViewController: SearchResultDelegate {
         return true
     }
         
-}
-
-
-
-extension SearchResultViewController: LikeDelegate {
-    func updateLike(_ id: String) {
-        let _ = viewModel.updateLikeList(id)
-    }
 }

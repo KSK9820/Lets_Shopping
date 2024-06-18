@@ -10,8 +10,6 @@ import WebKit
 
 final class SearchResultDetailViewController: UIViewController {
     
-    weak var delegate: LikeDelegate?
-    
     private let viewModel: SearchResultDetailViewModel
     
     private let webView = WKWebView()
@@ -86,7 +84,7 @@ final class SearchResultDetailViewController: UIViewController {
     
     @objc
     private func navigationBackButtonItemTapped() {
-        delegate?.updateLike(viewModel.detailData.id)
+//        delegate?.getChangedStatus()
         navigationController?.popViewController(animated: true)
     }
     
