@@ -64,6 +64,17 @@ final class NickNameTextField: UIView {
     }
     
     
+    // MARK: - Internal method
+    
+    func setNickName(_ nickname: String) {
+        textField.text = nickname
+    }
+
+    func getNickName() -> String? {
+        return textField.text
+    }
+    
+    
     // MARK: - ConfigureUI
     
     private func configureHierarchy() {

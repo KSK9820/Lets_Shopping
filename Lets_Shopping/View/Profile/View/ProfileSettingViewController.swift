@@ -10,7 +10,7 @@ import SnapKit
 
 final class ProfileSettingViewController: UIViewController {
     
-    private let viewModel = ProfileSettingViewModel()
+    private let viewModel: ProfileSettingViewModel
     
     private let profileImageView = ProfileImageView()
     private let nicknameTextField = NickNameTextField()
@@ -25,7 +25,21 @@ final class ProfileSettingViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureUI()
+        reConfigureUI()
+        configureAction()
         dataBinding()
+    }
+    
+    
+    // MARK: - Initialize
+
+    init(_ viewModel: ProfileSettingViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -34,7 +48,9 @@ final class ProfileSettingViewController: UIViewController {
     private func dataBinding() {
         viewModel.userInformation.bind { [weak self] userInformation in
             DispatchQueue.main.async {
-                self?.profileImageView.setProfileImage(userInformation.profileImage)
+                if let userInformation {
+                    self?.profileImageView.setProfileImage(userInformation.profileImage)
+                } 
             }
         }
     }
@@ -76,13 +92,24 @@ final class ProfileSettingViewController: UIViewController {
             target: self
         )
         
-        let tapGestureRecoginzer = UITapGestureRecognizer(target: self,
-                                                          action: #selector(profileImageViewTapped(_:)))
-        profileImageView.addGestureRecognizer(tapGestureRecoginzer)
-        
         nicknameTextField.delegate = self
         
         completionButton.addTarget(self, action: #selector(completionButtonTapped), for: .touchUpInside)
+    }
+    
+    private func configureAction() {
+        let tapGestureRecoginzer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(profileImageViewTapped(_:)))
+        profileImageView.addGestureRecognizer(tapGestureRecoginzer)
+    }
+    
+    private func reConfigureUI() {
+        if viewModel.type == .setting {
+            completionButton.isHidden = true
+            nicknameTextField.setNickName(viewModel.userInformation.value?.nickname ?? "")
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(navigationSaveButtonTapped))
+            navigationItem.rightBarButtonItem?.tintColor = .sBlack
+        }
     }
     
 
@@ -90,20 +117,32 @@ final class ProfileSettingViewController: UIViewController {
 
     @objc
     private func profileImageViewTapped(_ sender: UITapGestureRecognizer) {
-        let settingVM = ProfileImageSettingViewModel(profileImage: Binding(viewModel.userInformation.value.profileImage))
+        guard let userInformation = viewModel.userInformation.value else { return }
+        
+        let settingVM = ProfileImageSettingViewModel(profileImage: Binding(userInformation.profileImage))
         let settingVC = ProfileImageSettingViewController(settingVM)
+        
         settingVC.delegate = self
         
         navigationController?.pushViewController(settingVC, animated: false)
     }
     
-    @objc private func navigationBackButtonItemTapped() {
+    @objc 
+    private func navigationBackButtonItemTapped() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc private func completionButtonTapped() {
-        if viewModel.saveUserInformation() {
+    @objc 
+    private func completionButtonTapped() {
+        if viewModel.saveUserInformation(nicknameTextField.getNickName()) {
             changeRootViewController()
+        }
+    }
+    
+    @objc
+    private func navigationSaveButtonTapped() {
+        if viewModel.saveUserInformation(nicknameTextField.getNickName()) {
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -111,7 +150,7 @@ final class ProfileSettingViewController: UIViewController {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
 
-        let rootviewController = UINavigationController(rootViewController: TabBarController())
+        let rootviewController = TabBarController()
         sceneDelegate?.window?.rootViewController = rootviewController
         sceneDelegate?.window?.makeKeyAndVisible()
     }

@@ -79,7 +79,8 @@ final class OnBoardingStartViewController: UIViewController {
 
     @objc
     private func startButtonTapped() {
-        let vc = ProfileSettingViewController()
+        let vm = ProfileSettingViewModel(type: .onboarding)
+        let vc = ProfileSettingViewController(vm)
         navigationController?.pushViewController(vc, animated: false)
     }
     
