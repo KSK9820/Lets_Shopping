@@ -25,7 +25,7 @@ final class SearchResultDetailViewModel {
     }
     
     func updateLikeStatus() {
-        if UserDefaults.standard.likeItem.item[detailData.id] == true {
+        if likeStatus.value == true {
             UserDefaults.standard.likeItem.item.removeValue(forKey: detailData.id)
             likeStatus.value = false
         } else {
