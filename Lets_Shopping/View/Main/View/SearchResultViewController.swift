@@ -49,8 +49,10 @@ final class SearchResultViewController: UIViewController {
             self?.headerView.selectButton(status: buttonStatus)
             
             DispatchQueue.main.async {
-                if let _ = self?.viewModel.searchResult.value {
-                    self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                if let value = self?.viewModel.searchResult.value {
+                    if value.items.count > 0 {
+                        self?.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                    }
                 }
             }
         }
