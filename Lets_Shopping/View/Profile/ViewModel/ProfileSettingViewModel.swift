@@ -9,9 +9,23 @@ import Foundation
 
 final class ProfileSettingViewModel {
     
-    private(set) lazy var userInformation = Binding<UserInformationDTO>(
-        UserInformationDTO(profileImage: getRandomImage())
-    )
+    private(set) var type: Navigation
+    private(set) lazy var userInformation = Binding<UserInformationDTO?>(nil)
+    
+    
+    // MARK: - Initialize
+
+    init(type: Navigation) {
+        self.type = type
+        if type == .onboarding {
+            self.userInformation.value = UserInformationDTO(profileImage: getRandomImage())
+        } else {
+            self.userInformation.value = UserDefaults.standard.userInformation
+        }
+    }
+    
+    
+    // MARK: - Internal method
     
     func getRandomImage() -> ProfileImage {
         ProfileImage.allCases.randomElement() ?? ProfileImage.profile_0
@@ -37,20 +51,20 @@ final class ProfileSettingViewModel {
             return NickNameMessage.numberError
         }
     
-        userInformation.value.nickname = nickname
+        userInformation.value?.nickname = nickname
         return NickNameMessage.validNickName
     }
     
     func setUserProfileImage(_ profileImage: ProfileImage) {
-        userInformation.value.profileImage = profileImage
+        userInformation.value?.profileImage = profileImage
     }
     
-    func saveUserInformation() -> Bool {
-        let result = validateNickName(userInformation.value.nickname)
-
+    func saveUserInformation(_ nickname: String?) -> Bool {
+        let result = validateNickName(nickname)
+        
         switch result {
         case .validNickName:
-            userInformation.value.signinDate = createSigninDate()
+            userInformation.value?.signinDate = createSigninDate()
             UserDefaults.standard.userInformation = userInformation.value
         default:
             return false
@@ -62,6 +76,9 @@ final class ProfileSettingViewModel {
         
         return true
     }
+    
+    
+    // MARK: - Private method
     
     private func createSigninDate() -> String {
         let dateformatter = DateFormatter()

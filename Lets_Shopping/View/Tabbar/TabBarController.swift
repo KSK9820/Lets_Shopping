@@ -18,7 +18,7 @@ final class TabBarController: UITabBarController {
         let nav1 = UINavigationController(rootViewController: MainViewController())
         nav1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: 0)
         
-        let nav2 = UINavigationController(rootViewController: MainViewController())
+        let nav2 = UINavigationController(rootViewController: SettingViewController())
         nav2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person"), tag: 1)
         
         setViewControllers([nav1, nav2], animated: false)
