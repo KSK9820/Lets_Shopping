@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5300ABB02C2170E5000E87B8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300ABAF2C2170E5000E87B8 /* String+Extension.swift */; };
 		532F16582C1B585800EB4F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16572C1B585800EB4F8F /* AppDelegate.swift */; };
 		532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16592C1B585800EB4F8F /* SceneDelegate.swift */; };
 		532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F165B2C1B585800EB4F8F /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5300ABAF2C2170E5000E87B8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		532F16542C1B585800EB4F8F /* Lets_Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lets_Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532F16572C1B585800EB4F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532F16592C1B585800EB4F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				5346DA242C1C40B5008DEFBD /* CALayer+Extension.swift */,
 				5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */,
 				5381DD462C205FE2006F733B /* Bundle+Extension.swift */,
+				5300ABAF2C2170E5000E87B8 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				53A0310F2C1F6D2F00F85A6F /* RecentSearchKeywordHeaderView.swift in Sources */,
 				5346DA252C1C40B5008DEFBD /* CALayer+Extension.swift in Sources */,
 				532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */,
+				5300ABB02C2170E5000E87B8 /* String+Extension.swift in Sources */,
 				5346DA3E2C1E2695008DEFBD /* MainViewController.swift in Sources */,
 				5346DA2A2C1D7185008DEFBD /* NickNameTextFieldDelegate.swift in Sources */,
 				53A031002C1F341A00F85A6F /* MainViewModel.swift in Sources */,

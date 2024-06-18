@@ -101,6 +101,11 @@ final class NickNameTextField: UIView {
     @objc
     private func textFieldValueChanged(_ sender: UITextField) {
         statusLabel.text =  delegate?.validateTextField(sender.text)
+        if statusLabel.text == NickNameMessage.validNickName.description {
+            statusLabel.textColor = .sDarkGray
+        } else {
+            statusLabel.textColor = .sOrange
+        }
     }
     
 }
