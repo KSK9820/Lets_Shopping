@@ -10,7 +10,10 @@ import Alamofire
 
 final class NetworkManager {
     
-    func getSearchData(_ keyword: String, sort: Sort = .sim, start: Int, completion: @escaping (Result<SearchResultDTO, Error>) -> Void) {
+    private init() {}
+    
+    
+    static func getSearchData(_ keyword: String, sort: Sort = .sim, start: Int, completion: @escaping (Result<SearchResultDTO, Error>) -> Void) {
         guard let url = APIRequest.naverShopping.makeURLString() else { return }
         guard let clientId = Bundle.main.naverClientID,
               let clientSecret = Bundle.main.NaverClientSecret else { return }
