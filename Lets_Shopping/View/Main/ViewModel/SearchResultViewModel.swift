@@ -9,8 +9,6 @@ import Foundation
 
 final class SearchResultViewModel {
     
-    private let networkManager = NetworkManager()
-    
     private(set) var filterButtonStatus = Binding<[Bool]>([true, false, false, false])
     private(set) var searchResult = Binding<SearchResultDTO?>(nil)
     
@@ -42,7 +40,7 @@ final class SearchResultViewModel {
     }
     
     func getSearchData() {
-        networkManager.getSearchData(title, sort: searchSort, start: startIndex) { [weak self] result in
+        NetworkManager.shared.getSearchData(title, sort: searchSort, start: startIndex) { [weak self] result in
             switch result {
             case .success(let data):
                 if self?.startIndex == 1 {
