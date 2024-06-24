@@ -57,6 +57,7 @@
 		53A0310D2C1F65B300F85A6F /* RecentSearchKeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0310C2C1F65B300F85A6F /* RecentSearchKeywordTableViewCell.swift */; };
 		53A0310F2C1F6D2F00F85A6F /* RecentSearchKeywordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0310E2C1F6D2F00F85A6F /* RecentSearchKeywordHeaderView.swift */; };
 		53A4227E2C1B692F00556400 /* ContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4227D2C1B692F00556400 /* ContentSize.swift */; };
+		53AF791A2C295608003F734B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AF79192C295608003F734B /* UIViewController+Extension.swift */; };
 		53C319282C201AB9008A328F /* ManipulateRecentSearchKeywordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C319272C201AB9008A328F /* ManipulateRecentSearchKeywordDelegate.swift */; };
 		53C3192E2C201BDF008A328F /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C3192D2C201BDF008A328F /* SearchResultViewModel.swift */; };
 		53C319302C202A92008A328F /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C3192F2C202A92008A328F /* SearchResultHeaderView.swift */; };
@@ -120,6 +121,7 @@
 		53A0310C2C1F65B300F85A6F /* RecentSearchKeywordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchKeywordTableViewCell.swift; sourceTree = "<group>"; };
 		53A0310E2C1F6D2F00F85A6F /* RecentSearchKeywordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchKeywordHeaderView.swift; sourceTree = "<group>"; };
 		53A4227D2C1B692F00556400 /* ContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSize.swift; sourceTree = "<group>"; };
+		53AF79192C295608003F734B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		53C319272C201AB9008A328F /* ManipulateRecentSearchKeywordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulateRecentSearchKeywordDelegate.swift; sourceTree = "<group>"; };
 		53C3192D2C201BDF008A328F /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		53C3192F2C202A92008A328F /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */,
 				5381DD462C205FE2006F733B /* Bundle+Extension.swift */,
 				5300ABAF2C2170E5000E87B8 /* String+Extension.swift */,
+				53AF79192C295608003F734B /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			files = (
 				5346DA1D2C1C1B22008DEFBD /* ProfileImageView.swift in Sources */,
 				5381DD3F2C205617006F733B /* SearchResultCollectionViewCell.swift in Sources */,
+				53AF791A2C295608003F734B /* UIViewController+Extension.swift in Sources */,
 				5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */,
 				5381DD572C209CD6006F733B /* LikeItemDTO.swift in Sources */,
 				53A031022C1F5D5500F85A6F /* SearchResultViewController.swift in Sources */,
@@ -730,6 +734,7 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lets_Shopping/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "김수경";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -762,6 +767,7 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lets_Shopping/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "김수경";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

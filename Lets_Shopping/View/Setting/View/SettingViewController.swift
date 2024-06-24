@@ -85,26 +85,7 @@ final class SettingViewController: UIViewController {
         profileView.addGestureRecognizer(tapGestureRecoginzer)
     }
     
-    private func makeAlert() {
-        let alert = UIAlertController(
-            title: "탈퇴하기",
-            message: "탈퇴를 하면 데이터가 모두 초기화 됩니다. 탈퇴하시겠습니까?",
-            preferredStyle: .alert)
-        
-        let ok = UIAlertAction(
-            title: "확인",
-            style: .default) { _ in
-                self.deleteAllUserInformation()
-            }
-        let cancel = UIAlertAction(
-            title: "취소",
-            style: .cancel)
-        
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true)
-    }
+    
     
     private func deleteAllUserInformation() {
         UserDefaults.standard.userInformation = nil
@@ -161,7 +142,8 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == viewModel.settingList.count - 1 {
-            makeAlert()
+            makeAlert(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화 됩니다. 탈퇴하시겠습니까?", option: "확인", completion: deleteAllUserInformation)
+
         }
     }
     
