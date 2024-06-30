@@ -10,7 +10,6 @@
 		5300ABB02C2170E5000E87B8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300ABAF2C2170E5000E87B8 /* String+Extension.swift */; };
 		532F16582C1B585800EB4F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16572C1B585800EB4F8F /* AppDelegate.swift */; };
 		532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F16592C1B585800EB4F8F /* SceneDelegate.swift */; };
-		532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F165B2C1B585800EB4F8F /* ViewController.swift */; };
 		532F16612C1B585A00EB4F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532F16602C1B585A00EB4F8F /* Assets.xcassets */; };
 		532F16642C1B585A00EB4F8F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 532F16632C1B585A00EB4F8F /* Base */; };
 		532F166C2C1B595300EB4F8F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 532F166B2C1B595300EB4F8F /* .gitignore */; };
@@ -80,7 +79,6 @@
 		532F16542C1B585800EB4F8F /* Lets_Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lets_Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532F16572C1B585800EB4F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532F16592C1B585800EB4F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		532F165B2C1B585800EB4F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		532F16602C1B585A00EB4F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532F16632C1B585A00EB4F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532F16652C1B585A00EB4F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,12 +180,11 @@
 				5346DA232C1C40AD008DEFBD /* Extension */,
 				5346DA152C1C168A008DEFBD /* DTO */,
 				5346DA202C1C1C0B008DEFBD /* Enum */,
-				53E46DD92C1B68480026DA77 /* CustomView */,
+				53E46DD92C1B68480026DA77 /* DesignSystem */,
 				53E46DCD2C1B61D40026DA77 /* View */,
 				53E46DC72C1B60600026DA77 /* Utility */,
 				532F16572C1B585800EB4F8F /* AppDelegate.swift */,
 				532F16592C1B585800EB4F8F /* SceneDelegate.swift */,
-				532F165B2C1B585800EB4F8F /* ViewController.swift */,
 				532F16602C1B585A00EB4F8F /* Assets.xcassets */,
 				532F16622C1B585A00EB4F8F /* LaunchScreen.storyboard */,
 				532F16652C1B585A00EB4F8F /* Info.plist */,
@@ -405,6 +402,26 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		53C9E1842C31BD9E009AE7AD /* Componetns */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DD22C1B62A00026DA77 /* OrangeButton.swift */,
+				5346DA1C2C1C1B22008DEFBD /* ProfileImageView.swift */,
+				5346DA212C1C35ED008DEFBD /* NickNameTextField.swift */,
+				5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */,
+				53C319312C202AF0008A328F /* GrayButton.swift */,
+			);
+			path = Componetns;
+			sourceTree = "<group>";
+		};
+		53C9E1852C31BDA7009AE7AD /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				53E46DD42C1B63760026DA77 /* SystemFont.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
 		53DD788A2C31496A009892F5 /* enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,17 +482,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		53E46DD92C1B68480026DA77 /* CustomView */ = {
+		53E46DD92C1B68480026DA77 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				53E46DD22C1B62A00026DA77 /* OrangeButton.swift */,
-				53E46DD42C1B63760026DA77 /* SystemFont.swift */,
-				5346DA1C2C1C1B22008DEFBD /* ProfileImageView.swift */,
-				5346DA212C1C35ED008DEFBD /* NickNameTextField.swift */,
-				5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */,
-				53C319312C202AF0008A328F /* GrayButton.swift */,
+				53C9E1852C31BDA7009AE7AD /* Typography */,
+				53C9E1842C31BD9E009AE7AD /* Componetns */,
 			);
-			path = CustomView;
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,7 +582,6 @@
 				5346DA222C1C35ED008DEFBD /* NickNameTextField.swift in Sources */,
 				53DD788C2C31499F009892F5 /* NaverShoppingRequestDTO.swift in Sources */,
 				5346DA2F2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift in Sources */,
-				532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */,
 				53DD78892C314960009892F5 /* NetworkError.swift in Sources */,
 				5346DA352C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift in Sources */,
 				53E46DD32C1B62A00026DA77 /* OrangeButton.swift in Sources */,
