@@ -14,6 +14,8 @@
 		532F16612C1B585A00EB4F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532F16602C1B585A00EB4F8F /* Assets.xcassets */; };
 		532F16642C1B585A00EB4F8F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 532F16632C1B585A00EB4F8F /* Base */; };
 		532F166C2C1B595300EB4F8F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 532F166B2C1B595300EB4F8F /* .gitignore */; };
+		534275FA2C2D576F00691D4A /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534275F92C2D576F00691D4A /* Encodable+Extension.swift */; };
+		534275FC2C2D802400691D4A /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534275FB2C2D802400691D4A /* ServiceManager.swift */; };
 		5346DA172C1C1692008DEFBD /* UserInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */; };
 		5346DA192C1C16EC008DEFBD /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA182C1C16EC008DEFBD /* ProfileSettingViewController.swift */; };
 		5346DA1B2C1C1836008DEFBD /* ProfileSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA1A2C1C1836008DEFBD /* ProfileSettingViewModel.swift */; };
@@ -62,6 +64,10 @@
 		53C3192E2C201BDF008A328F /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C3192D2C201BDF008A328F /* SearchResultViewModel.swift */; };
 		53C319302C202A92008A328F /* SearchResultHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C3192F2C202A92008A328F /* SearchResultHeaderView.swift */; };
 		53C319322C202AF0008A328F /* GrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C319312C202AF0008A328F /* GrayButton.swift */; };
+		53DD78852C313BA4009892F5 /* NetworkRetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD78842C313BA4009892F5 /* NetworkRetryHandler.swift */; };
+		53DD78872C31494B009892F5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD78862C31494B009892F5 /* HTTPMethod.swift */; };
+		53DD78892C314960009892F5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD78882C314960009892F5 /* NetworkError.swift */; };
+		53DD788C2C31499F009892F5 /* NaverShoppingRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD788B2C31499F009892F5 /* NaverShoppingRequestDTO.swift */; };
 		53E46DC92C1B60760026DA77 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DC82C1B60760026DA77 /* Binding.swift */; };
 		53E46DD02C1B61F10026DA77 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DCF2C1B61F00026DA77 /* OnBoardingViewController.swift */; };
 		53E46DD32C1B62A00026DA77 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E46DD22C1B62A00026DA77 /* OrangeButton.swift */; };
@@ -79,6 +85,8 @@
 		532F16632C1B585A00EB4F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532F16652C1B585A00EB4F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532F166B2C1B595300EB4F8F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		534275F92C2D576F00691D4A /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		534275FB2C2D802400691D4A /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		5346DA162C1C1692008DEFBD /* UserInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationDTO.swift; sourceTree = "<group>"; };
 		5346DA182C1C16EC008DEFBD /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		5346DA1A2C1C1836008DEFBD /* ProfileSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +134,10 @@
 		53C3192D2C201BDF008A328F /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		53C3192F2C202A92008A328F /* SearchResultHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultHeaderView.swift; sourceTree = "<group>"; };
 		53C319312C202AF0008A328F /* GrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayButton.swift; sourceTree = "<group>"; };
+		53DD78842C313BA4009892F5 /* NetworkRetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRetryHandler.swift; sourceTree = "<group>"; };
+		53DD78862C31494B009892F5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		53DD78882C314960009892F5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		53DD788B2C31499F009892F5 /* NaverShoppingRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverShoppingRequestDTO.swift; sourceTree = "<group>"; };
 		53E46DC82C1B60760026DA77 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		53E46DCF2C1B61F00026DA77 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		53E46DD22C1B62A00026DA77 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
@@ -191,6 +203,7 @@
 				53A031032C1F603700F85A6F /* RecentSearchKeywordDTO.swift */,
 				5381DD542C20768D006F733B /* SearchResultDTO.swift */,
 				5381DD562C209CD6006F733B /* LikeItemDTO.swift */,
+				53DD788B2C31499F009892F5 /* NaverShoppingRequestDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 				5381DD462C205FE2006F733B /* Bundle+Extension.swift */,
 				5300ABAF2C2170E5000E87B8 /* String+Extension.swift */,
 				53AF79192C295608003F734B /* UIViewController+Extension.swift */,
+				534275F92C2D576F00691D4A /* Encodable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,7 +308,10 @@
 		5381DD4E2C206CD1006F733B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				53DD788A2C31496A009892F5 /* enum */,
 				5381DD4F2C206CDC006F733B /* NetworkManager.swift */,
+				534275FB2C2D802400691D4A /* ServiceManager.swift */,
+				53DD78842C313BA4009892F5 /* NetworkRetryHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -387,6 +404,15 @@
 				5381DD3C2C2055E1006F733B /* SearchResultDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		53DD788A2C31496A009892F5 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				53DD78862C31494B009892F5 /* HTTPMethod.swift */,
+				53DD78882C314960009892F5 /* NetworkError.swift */,
+			);
+			path = enum;
 			sourceTree = "<group>";
 		};
 		53E46DC72C1B60600026DA77 /* Utility */ = {
@@ -536,12 +562,15 @@
 				5346DA1D2C1C1B22008DEFBD /* ProfileImageView.swift in Sources */,
 				5381DD3F2C205617006F733B /* SearchResultCollectionViewCell.swift in Sources */,
 				53AF791A2C295608003F734B /* UIViewController+Extension.swift in Sources */,
+				534275FA2C2D576F00691D4A /* Encodable+Extension.swift in Sources */,
 				5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */,
 				5381DD572C209CD6006F733B /* LikeItemDTO.swift in Sources */,
 				53A031022C1F5D5500F85A6F /* SearchResultViewController.swift in Sources */,
 				5346DA222C1C35ED008DEFBD /* NickNameTextField.swift in Sources */,
+				53DD788C2C31499F009892F5 /* NaverShoppingRequestDTO.swift in Sources */,
 				5346DA2F2C1DBAB6008DEFBD /* ProfileSettingImageCollectionViewCell.swift in Sources */,
 				532F165C2C1B585800EB4F8F /* ViewController.swift in Sources */,
+				53DD78892C314960009892F5 /* NetworkError.swift in Sources */,
 				5346DA352C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift in Sources */,
 				53E46DD32C1B62A00026DA77 /* OrangeButton.swift in Sources */,
 				5346DA1F2C1C1BF4008DEFBD /* ProfileImage.swift in Sources */,
@@ -551,10 +580,12 @@
 				5381DD472C205FE2006F733B /* Bundle+Extension.swift in Sources */,
 				5346DA172C1C1692008DEFBD /* UserInformationDTO.swift in Sources */,
 				53C319302C202A92008A328F /* SearchResultHeaderView.swift in Sources */,
+				534275FC2C2D802400691D4A /* ServiceManager.swift in Sources */,
 				53E46DD52C1B63760026DA77 /* SystemFont.swift in Sources */,
 				5346DA2C2C1D73B9008DEFBD /* ProfileImageSettingViewController.swift in Sources */,
 				532F16582C1B585800EB4F8F /* AppDelegate.swift in Sources */,
 				53A0310F2C1F6D2F00F85A6F /* RecentSearchKeywordHeaderView.swift in Sources */,
+				53DD78852C313BA4009892F5 /* NetworkRetryHandler.swift in Sources */,
 				5346DA252C1C40B5008DEFBD /* CALayer+Extension.swift in Sources */,
 				532F165A2C1B585800EB4F8F /* SceneDelegate.swift in Sources */,
 				5300ABB02C2170E5000E87B8 /* String+Extension.swift in Sources */,
@@ -576,6 +607,7 @@
 				53A031042C1F603700F85A6F /* RecentSearchKeywordDTO.swift in Sources */,
 				5381DD552C20768D006F733B /* SearchResultDTO.swift in Sources */,
 				5346DA3B2C1E2116008DEFBD /* UserDefaults+Extension.swift in Sources */,
+				53DD78872C31494B009892F5 /* HTTPMethod.swift in Sources */,
 				5381DD6B2C20B9F3006F733B /* SettingViewModel.swift in Sources */,
 				5346DA372C1E007C008DEFBD /* ProfileImageSettingViewModel.swift in Sources */,
 				5381DD5E2C20A992006F733B /* SearchResultDetailViewModel.swift in Sources */,

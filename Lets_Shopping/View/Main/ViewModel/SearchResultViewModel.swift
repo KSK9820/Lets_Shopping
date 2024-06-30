@@ -11,11 +11,10 @@ final class SearchResultViewModel {
     
     private(set) var filterButtonStatus = Binding<[Bool]>([true, false, false, false])
     private(set) var searchResult = Binding<SearchResultDTO?>(nil)
-    
-    private(set) var title: String
-    private(set) var searchSort: Sort = .sim
-    private(set) var startIndex = 1
+    var onError: (() -> Void)?
+   
     private(set) var selectedCellIndexPath: IndexPath?
+    private(set) var shoppingRequestInformation: NaverShoppingRequest
     
     var totalSearchResult: String? {
         get {
@@ -27,30 +26,31 @@ final class SearchResultViewModel {
     }
     
     init(title: String) {
-        self.title = title
+        self.shoppingRequestInformation = NaverShoppingRequest(start: 1, sort: .sim, query: title)
     }
     
     func changeFilterButtonStatus(_ sortOption: Int) {
         var status = Array(repeating: false, count: 4)
         status[sortOption] = true
         filterButtonStatus.value = status
-        searchSort = Sort.allCases[sortOption]
-        startIndex = 1
+        shoppingRequestInformation.sort = Sort.allCases[sortOption]
+        shoppingRequestInformation.start = 1
         getSearchData()
     }
     
     func getSearchData() {
-        NetworkManager.shared.getSearchData(title, sort: searchSort, start: startIndex) { [weak self] result in
+        ServiceManager.shared.getShoppingSearchData(shoppingRequestInformation) { [weak self] result in
             switch result {
             case .success(let data):
-                if self?.startIndex == 1 {
+                if self?.shoppingRequestInformation.start == 1 {
                     self?.searchResult.value = data
-                    self?.startIndex = data.start + data.display
+                    self?.shoppingRequestInformation.start = data.start + data.display
                 } else {
-                    self?.startIndex = data.start + data.display
+                    self?.shoppingRequestInformation.start = data.start + data.display
                     self?.searchResult.value?.items.append(contentsOf: data.items)
                 }
             case .failure(let error):
+                self?.onError?()
                 print(error)
             }
         }

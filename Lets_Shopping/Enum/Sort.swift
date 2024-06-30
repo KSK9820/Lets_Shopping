@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Sort: String, CaseIterable {
+enum Sort: String, CaseIterable, Encodable {
     case sim
     case date
     case dsc

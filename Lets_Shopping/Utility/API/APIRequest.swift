@@ -8,17 +8,18 @@
 import Foundation
 
 enum APIRequest {
-    case naverShopping
+    case naverShopping(NaverShoppingRequest)
 }
 
 extension APIRequest {
   
-    var host: String {
+    var scheme: String {
         switch self {
         case .naverShopping:
             return "https://"
         }
     }
+    
     var path: [String] {
         switch self {
         case .naverShopping:
@@ -26,11 +27,35 @@ extension APIRequest {
         }
     }
     
+    var queryItem: [URLQueryItem]? {
+        switch self {
+        case .naverShopping(let parameter):
+            return parameter.toQueryItems()
+        }
+    }
+    
+    var header: [String: String]? {
+        guard let clientId = Bundle.main.naverClientID,
+        let clientSecret = Bundle.main.NaverClientSecret else { return nil }
+        
+        return [
+            "X-Naver-Client-Id" : clientId,
+            "X-Naver-Client-Secret" : clientSecret
+        ]
+    }
+    
+    var httpMethod: HTTPMehtod {
+        switch self {
+        case .naverShopping:
+            return .get
+        }
+    }
+    
     func makeURLString() -> String? {
         switch self {
         case .naverShopping:
-            if let baseURL = Bundle.main.naverBaseURL {
-                return host + baseURL + path.joined(separator: "/")
+            if let hostURL = Bundle.main.naverBaseURL {
+                return scheme + hostURL + path.joined(separator: "/")
             }
             return nil
         }

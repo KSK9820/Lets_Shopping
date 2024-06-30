@@ -6,41 +6,44 @@
 //
 
 import Foundation
-import Alamofire
 
 final class NetworkManager {
     
-    static let shared = NetworkManager()
-    
-    private init() { }
-    
-    func getSearchData(_ keyword: String, sort: Sort = .sim, start: Int, completion: @escaping (Result<SearchResultDTO, Error>) -> Void) {
-        guard let url = APIRequest.naverShopping.makeURLString() else { return }
-        guard let clientId = Bundle.main.naverClientID,
-              let clientSecret = Bundle.main.NaverClientSecret else { return }
+    func dataTask(_ request: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        let retryHandler = NetworkRetryHandler()
+        var request = request
+        request.timeoutInterval = 2.0
         
-        let header: HTTPHeaders = ["X-Naver-Client-Id" : clientId,
-                                   "X-Naver-Client-Secret" : clientSecret]
-        let parameter: Parameters = [
-            "display" : 30,
-            "start": start,
-            "sort": sort.rawValue,
-            "query": keyword
-        ] as [String : Any]
-        
-        AF.request(url,
-                   method: .get,
-                   parameters: parameter,
-                   encoding: URLEncoding.queryString,
-                   headers: header
-        ).responseDecodable(of: SearchResultDTO.self) { response in
-            switch response.result {
-            case .success(let data): 
+        func makeRequest() {
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error {
+                    if retryHandler.shouldRetry(for: error) {
+                        retryHandler.incrementRetryCount()
+                        DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
+                            makeRequest()
+                        }
+                    } else {
+                        completion(.failure(.unknown))
+                    }
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse else {
+                    return completion(.failure(.noResponse))
+                }
+                
+                if !(200..<300).contains(response.statusCode) {
+                    completion(.failure(.outOfRangeReponse))
+                }
+                
+                guard let data = data else {
+                    return completion(.failure(.emptyData))
+                }
                 completion(.success(data))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+            }.resume()
         }
+        
+        makeRequest()
     }
     
 }

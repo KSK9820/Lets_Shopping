@@ -73,6 +73,13 @@ final class SearchResultViewController: UIViewController {
             }
         }
 
+        viewModel.onError = { [weak self] in
+            DispatchQueue.main.async {
+                self?.makeAlert(title: "정보를 불러올 수 없음", message: "네트워크 통신을 다시 시도하겠습니까?", option: "재시도", completion: {
+                    self?.viewModel.getSearchData()
+                })
+            }
+        }
     }
     
     
@@ -97,7 +104,7 @@ final class SearchResultViewController: UIViewController {
     }
     
     private func configureUI() {
-        navigationItem.title = viewModel.title
+        navigationItem.title = viewModel.shoppingRequestInformation.query
         navigationItem.leftBarButtonItem = BlackLeftBarButtonItem(
                     action: #selector(navigationBackButtonItemTapped),
                     target: self)
@@ -133,7 +140,7 @@ final class SearchResultViewController: UIViewController {
 extension SearchResultViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.startIndex - 1
+        viewModel.shoppingRequestInformation.start - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -175,8 +182,8 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             guard let searchResult = viewModel.searchResult.value else { break }
-            if indexPath.row == viewModel.startIndex - 4 &&
-                viewModel.startIndex < searchResult.total {
+            if indexPath.row == viewModel.shoppingRequestInformation.start - 4 &&
+                viewModel.shoppingRequestInformation.start < searchResult.total {
                 viewModel.getSearchData()
             }
         }
