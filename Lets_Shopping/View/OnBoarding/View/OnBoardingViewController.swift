@@ -20,7 +20,7 @@ final class OnBoardingStartViewController: UIViewController {
         return view
     }()
     
-    private let imageView: UIImageView = {
+    private let onboardingImageView: UIImageView = {
         let view = UIImageView()
        
         view.image = UIImage.launch
@@ -49,7 +49,7 @@ final class OnBoardingStartViewController: UIViewController {
     // MARK: - Configure UI
     
     private func configureHierarchy() {
-        view.addSubview(imageView)
+        view.addSubview(onboardingImageView)
         view.addSubview(onBoardingTitle)
         view.addSubview(startButton)
     }
@@ -57,12 +57,12 @@ final class OnBoardingStartViewController: UIViewController {
     private func configureLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        imageView.snp.makeConstraints { make in
+        onboardingImageView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
         
         onBoardingTitle.snp.makeConstraints { make in
-            make.bottom.equalTo(imageView.snp.top).offset(-80)
+            make.bottom.equalTo(onboardingImageView.snp.top).offset(-80)
             make.centerX.equalToSuperview()
         }
         

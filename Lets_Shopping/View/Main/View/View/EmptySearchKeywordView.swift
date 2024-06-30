@@ -9,7 +9,7 @@ import UIKit
 
 final class EmptySearchKeywordView: UIView {
     
-    private let imageView = UIImageView(image: UIImage.empty)
+    private let emptyImageView = UIImageView(image: UIImage.empty)
     private let emptyLabel: UILabel = {
         let view = UILabel()
         
@@ -37,18 +37,18 @@ final class EmptySearchKeywordView: UIView {
     // MARK: - Configure UI
     
     private func configureHierarchy() {
-        addSubview(imageView)
+        addSubview(emptyImageView)
         addSubview(emptyLabel)
     }
     
     private func configureLayout() {
         
-        imageView.snp.makeConstraints { make in
+        emptyImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-30)
         }
         emptyLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
+            make.top.equalTo(emptyImageView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
     }

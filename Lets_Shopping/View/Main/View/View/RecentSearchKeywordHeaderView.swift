@@ -12,7 +12,7 @@ final class RecentSearchKeywordHeaderView: UIView {
     
     weak var delegate: ManipulateRecentSearchKeywordDelegate?
     
-    private let label: UILabel = {
+    private let headerTitleLabel: UILabel = {
         let view = UILabel()
         
         view.text = "최근 검색"
@@ -50,12 +50,12 @@ final class RecentSearchKeywordHeaderView: UIView {
     // MARK: - Configure UI
     
     private func configureHierarchy() {
-        addSubview(label)
+        addSubview(headerTitleLabel)
         addSubview(deleteButton)
     }
     
     private func configureLayout() {
-        label.snp.makeConstraints { make in
+        headerTitleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(ContentSize.searchTableViewRow.spacing)
             make.centerY.equalToSuperview()
         }

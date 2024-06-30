@@ -10,7 +10,7 @@ import SnapKit
 
 final class ProfileView: UIView {
     
-    private let imageView = ProfileImageView()
+    private let profileImageView = ProfileImageView()
     
     private let nicknameLabel: UILabel = {
         let view = UILabel()
@@ -57,8 +57,8 @@ final class ProfileView: UIView {
     func setContent(_ data: UserInformationDTO?) {
         guard let data else { return }
         
-        imageView.setProfileImage(data.profileImage)
-        imageView.hideCameraButton()
+        profileImageView.setProfileImage(data.profileImage)
+        profileImageView.hideCameraButton()
         
         nicknameLabel.text = data.nickname
         if let date = data.signinDate {
@@ -70,26 +70,26 @@ final class ProfileView: UIView {
     // MARK: - Configure UI
     
     private func configureHierarchy() {
-        addSubview(imageView)
+        addSubview(profileImageView)
         addSubview(nicknameLabel)
         addSubview(signinDateLabel)
         addSubview(pushImageView)
     }
     
     private func configureLayout() {
-        imageView.snp.makeConstraints { make in
+        profileImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(20)
             make.height.equalToSuperview().dividedBy(0.8)
-            make.width.equalTo(imageView.snp.height)
+            make.width.equalTo(profileImageView.snp.height)
         }
         nicknameLabel.snp.makeConstraints { make in
             make.bottom.equalTo(snp.centerY).offset(4)
-            make.leading.equalTo(imageView.snp.trailing).offset(20)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(20)
         }
         signinDateLabel.snp.makeConstraints { make in
             make.top.equalTo(snp.centerY).offset(4)
-            make.leading.equalTo(imageView.snp.trailing).offset(20)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(20)
         }
         pushImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
