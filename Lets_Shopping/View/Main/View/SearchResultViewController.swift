@@ -164,7 +164,7 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
         let item = searchResult.items[indexPath.row]
         
         let data = SearchResultDetailDataModel(title: item.title,
-                                               like: UserDefaults.standard.likeItem.item[item.productId],
+                                               like: viewModel.getLikeList(item.productId),
                                                id: item.productId,
                                                link: item.link)
         let vm = SearchResultDetailViewModel(data)

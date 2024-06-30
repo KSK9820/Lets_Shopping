@@ -88,10 +88,7 @@ final class SettingViewController: UIViewController {
     
     
     private func deleteAllUserInformation() {
-        UserDefaults.standard.userInformation = nil
-        UserDefaults.standard.likeItem.item.removeAll()
-        UserDefaults.standard.recentSearchKeyword.keyword.removeAll()
-        
+        viewModel.deleteAllUserInformation()
         changeRootViewController()
     }
     

@@ -9,18 +9,11 @@ import Foundation
 
 final class MainViewModel {
     
-    private(set) var userInformation = UserDefaults.standard.userInformation
-    private(set) var recentSearchKeyword = Binding<RecentSearchKeywordDTO>(UserDefaults.standard.recentSearchKeyword)
+    private let userDefaultsManager = UserDefaultsManager.shared
     
-    var navigationTitle: String {
-        get {
-            if let userInformation,
-               let nickname = userInformation.nickname {
-                return "\(nickname)'s Let's Shopping"
-            }
-            return "Let's Shopping"
-        }
-    }
+    private(set) var userInformation: Binding<UserInformationDTO>
+    private(set) var recentSearchKeyword: Binding<RecentSearchKeywordDTO>
+    private(set) var navigationTitle: String
     
     var sortedRecentKeyword: [(keyword: String, date: Date)] {
         get {
@@ -28,6 +21,12 @@ final class MainViewModel {
                 .map { ($0.element.key, $0.element.value) }
                 .sorted { $0.date > $1.date }
         }
+    }
+    
+    init() {
+        self.userInformation = Binding(userDefaultsManager.userInformation ?? UserInformationDTO(profileImage: .profile_0))
+        self.recentSearchKeyword = Binding(userDefaultsManager.recentSearchKeyword)
+        self.navigationTitle = userInformation.value.nickname ?? "" + "'s Let's Shopping"
     }
     
     func existRecentKeyword() -> Bool {
@@ -39,20 +38,20 @@ final class MainViewModel {
     }
     
     func addRecentSearchKeyword(_ keyword: String) {
-        UserDefaults.standard.recentSearchKeyword.keyword.updateValue(Date(), forKey: keyword)
-        recentSearchKeyword.value = UserDefaults.standard.recentSearchKeyword
+        userDefaultsManager.recentSearchKeyword.keyword.updateValue(Date(), forKey: keyword)
+        recentSearchKeyword.value = userDefaultsManager.recentSearchKeyword
     }
     
     func removeRecentSearchKeyword(_ index: Int) {
         let keyword = sortedRecentKeyword[index].keyword
         
-        UserDefaults.standard.recentSearchKeyword.keyword.removeValue(forKey: keyword)
-        recentSearchKeyword.value = UserDefaults.standard.recentSearchKeyword
+        userDefaultsManager.recentSearchKeyword.keyword.removeValue(forKey: keyword)
+        recentSearchKeyword.value = userDefaultsManager.recentSearchKeyword
     }
     
     func removeAllRecentSearchKeyword() {
-        UserDefaults.standard.recentSearchKeyword.keyword.removeAll()
-        recentSearchKeyword.value = UserDefaults.standard.recentSearchKeyword
+        userDefaultsManager.recentSearchKeyword.keyword.removeAll()
+        recentSearchKeyword.value = userDefaultsManager.recentSearchKeyword
     }
     
 }

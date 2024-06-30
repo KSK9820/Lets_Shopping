@@ -9,6 +9,8 @@ import Foundation
 
 final class SearchResultViewModel {
     
+    private let userDefaultsManager = UserDefaultsManager.shared
+    
     private(set) var filterButtonStatus = Binding<[Bool]>([true, false, false, false])
     private(set) var searchResult = Binding<SearchResultDTO?>(nil)
     var onError: (() -> Void)?
@@ -61,12 +63,12 @@ final class SearchResultViewModel {
     }
     
     func updateLikeList(_ id: String) -> Bool {
-        if UserDefaults.standard.likeItem.item[id] == true {
-            UserDefaults.standard.likeItem.item.removeValue(forKey: id)
+        if userDefaultsManager.likeItem.item[id] == true {
+            userDefaultsManager.likeItem.item.removeValue(forKey: id)
             
             return false
         } else {
-            UserDefaults.standard.likeItem.item.updateValue(true, forKey: id)
+            userDefaultsManager.likeItem.item.updateValue(true, forKey: id)
            
             return true
         }
@@ -76,11 +78,15 @@ final class SearchResultViewModel {
         guard let searchResult = searchResult.value else { return false }
         let id = searchResult.items[index.row].productId
         
-        if UserDefaults.standard.likeItem.item[id] == true {
+        if userDefaultsManager.likeItem.item[id] == true {
             return true
         } else {
             return false
         }
+    }
+    
+    func getLikeList(_ id: String) -> Bool {
+        return userDefaultsManager.likeItem.item[id] ?? false
     }
     
 }

@@ -9,6 +9,8 @@ import Foundation
 
 final class SearchResultDetailViewModel {
     
+    private let userDefaultsManager = UserDefaultsManager.shared
+    
     private(set) var detailData: SearchResultDetailDataModel
     private(set) lazy var likeStatus = Binding<Bool>(detailData.like ?? false)
     
@@ -26,10 +28,10 @@ final class SearchResultDetailViewModel {
     
     func updateLikeStatus() {
         if likeStatus.value == true {
-            UserDefaults.standard.likeItem.item.removeValue(forKey: detailData.id)
+            userDefaultsManager.likeItem.item.removeValue(forKey: detailData.id)
             likeStatus.value = false
         } else {
-            UserDefaults.standard.likeItem.item.updateValue(true, forKey: detailData.id)
+            userDefaultsManager.likeItem.item.updateValue(true, forKey: detailData.id)
             likeStatus.value = true
         }
     }

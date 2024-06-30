@@ -31,7 +31,7 @@
 		5346DA352C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */; };
 		5346DA372C1E007C008DEFBD /* ProfileImageSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA362C1E007C008DEFBD /* ProfileImageSettingViewModel.swift */; };
 		5346DA392C1E1ABB008DEFBD /* ProfileSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA382C1E1ABB008DEFBD /* ProfileSettingDelegate.swift */; };
-		5346DA3B2C1E2116008DEFBD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */; };
+		5346DA3B2C1E2116008DEFBD /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA3A2C1E2116008DEFBD /* UserDefaultsManager.swift */; };
 		5346DA3E2C1E2695008DEFBD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA3D2C1E2695008DEFBD /* MainViewController.swift */; };
 		5346DA442C1EBA65008DEFBD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346DA432C1EBA65008DEFBD /* TabBarController.swift */; };
 		5381DD3D2C2055E1006F733B /* SearchResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381DD3C2C2055E1006F733B /* SearchResultDelegate.swift */; };
@@ -102,7 +102,7 @@
 		5346DA342C1DFD7A008DEFBD /* BlackLeftBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackLeftBarButtonItem.swift; sourceTree = "<group>"; };
 		5346DA362C1E007C008DEFBD /* ProfileImageSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSettingViewModel.swift; sourceTree = "<group>"; };
 		5346DA382C1E1ABB008DEFBD /* ProfileSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingDelegate.swift; sourceTree = "<group>"; };
-		5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		5346DA3A2C1E2116008DEFBD /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		5346DA3D2C1E2695008DEFBD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5346DA432C1EBA65008DEFBD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5381DD3C2C2055E1006F733B /* SearchResultDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDelegate.swift; sourceTree = "<group>"; };
@@ -224,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				5346DA242C1C40B5008DEFBD /* CALayer+Extension.swift */,
-				5346DA3A2C1E2116008DEFBD /* UserDefaults+Extension.swift */,
 				5381DD462C205FE2006F733B /* Bundle+Extension.swift */,
 				5300ABAF2C2170E5000E87B8 /* String+Extension.swift */,
 				53AF79192C295608003F734B /* UIViewController+Extension.swift */,
@@ -419,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				5381DD402C20593C006F733B /* API */,
+				5346DA3A2C1E2116008DEFBD /* UserDefaultsManager.swift */,
 				53E46DC82C1B60760026DA77 /* Binding.swift */,
 				5346DA302C1DBC7B008DEFBD /* ReuseIdentifiable.swift */,
 			);
@@ -606,7 +606,7 @@
 				5346DA192C1C16EC008DEFBD /* ProfileSettingViewController.swift in Sources */,
 				53A031042C1F603700F85A6F /* RecentSearchKeywordDTO.swift in Sources */,
 				5381DD552C20768D006F733B /* SearchResultDTO.swift in Sources */,
-				5346DA3B2C1E2116008DEFBD /* UserDefaults+Extension.swift in Sources */,
+				5346DA3B2C1E2116008DEFBD /* UserDefaultsManager.swift in Sources */,
 				53DD78872C31494B009892F5 /* HTTPMethod.swift in Sources */,
 				5381DD6B2C20B9F3006F733B /* SettingViewModel.swift in Sources */,
 				5346DA372C1E007C008DEFBD /* ProfileImageSettingViewModel.swift in Sources */,

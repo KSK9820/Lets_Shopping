@@ -9,6 +9,8 @@ import Foundation
 
 final class ProfileSettingViewModel {
     
+    private let userDefaultsManager = UserDefaultsManager.shared
+    
     private(set) var type: Navigation
     private(set) lazy var userInformation = Binding<UserInformationDTO?>(nil)
     
@@ -20,7 +22,7 @@ final class ProfileSettingViewModel {
         if type == .onboarding {
             self.userInformation.value = UserInformationDTO(profileImage: getRandomImage())
         } else {
-            self.userInformation.value = UserDefaults.standard.userInformation
+            self.userInformation.value = userDefaultsManager.userInformation
         }
     }
     
@@ -65,12 +67,12 @@ final class ProfileSettingViewModel {
         switch result {
         case .validNickName:
             userInformation.value?.signinDate = createSigninDate()
-            UserDefaults.standard.userInformation = userInformation.value
+            userDefaultsManager.userInformation = userInformation.value
         default:
             return false
         }
         
-        guard let _ = UserDefaults.standard.userInformation else {
+        guard let _ = userDefaultsManager.userInformation else {
             return false
         }
         
